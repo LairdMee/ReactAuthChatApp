@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  form { 
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 1rem 2rem 3rem 2rem;
+      background-color: #deefff;
+  }
+  
+  label {
+      text-align: left;
+  }
+  
+  input { 
+      margin-bottom: 1rem;
+  }
+  
+  button {
+     padding: 0.5rem;
+     background-color: #deefff; 
+     border: 0.5px solid grey;
+     cursor: pointer;
+  }
+  
+  
+  .input-error {
+      margin-bottom: 0;
+      border: solid 2px red;
+      animation: shake 0.3s ease-in-out 0s 2;
+  }
+  
+  .error-message {
+      color: red;
+      font-size: 0.8rem;
+      text-align: left;
+      animation: shake 0.3s ease-in-out 0s 2;
+  }
+  
+  @keyframes shake {
+      0% {
+          margin-left: 0;
+      }
+      25% {
+          margin-left: 0.5rem;
+      }
+      75% {
+          margin-left: -0.5rem;
+      }   
+      100% {
+          margin-left: 0;
+      }
+  }
+  
+  .profile{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      animation: 4s rightToLeftAnimation 0s 1;
+  }
+  .profile-image {
+      width: 250px;
+      height: 250px;
+      
+    }
+  @keyframes rightToLeftAnimation {
+      0%   { left:200px;}
+      100% { left:0px;}
+    }
+    
+/* navbar css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body {
+    font-family: cursive;
+   }
+   a {
+    text-decoration: none;
+    padding: 10px;
+   }
+   li {
+    list-style: none;
+   }
+
+   .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: teal;
+    color: #fff;
+   }
+   .nav-links a {
+    color: #fff;
+    padding: auto;
+   }
+   .lactive-class{
+    color: yellowgreen;
+   }
+   /* LOGO */
+   .logo {
+    font-size: 32px;
+   }
+   /* NAVBAR MENU */
+   .menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+   }
+   .menu li:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+   }
+   .menu li {
+    padding: 5px 14px;
+   }
+   /* DROPDOWN MENU */
+   .services {
+    position: relative; 
+   }
+   .dropdown {
+    background-color: rgb(1, 139, 139);
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+   }
+   .dropdown li + li {
+    margin-top: 10px;
+   }
+   .dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+   }
+   .dropdown li:hover {
+    background-color: #4c9e9e;
+   }
+   .services:hover .dropdown {
+    display: block;
+   }
