@@ -4,7 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
 } from "firebase/auth";
 
 import {
@@ -44,9 +44,11 @@ export const logIn = async (email, password) => {
   const firestoreUser = await getFirstoreUser(email);
   return firestoreUser;
 };
-export const logout= async()=>{
-  signOut(auth);
-} 
+
+export const logout = async () => {
+  await signOut(auth);
+};
+
 export const signUp = async (email, password) => {
   // creates a user in the authentication service
   const { user } = await createUserWithEmailAndPassword(auth, email, password);
@@ -133,7 +135,11 @@ export const sendMessage = async (text, userId, username) => {
 };
 
 export const listenOnMessages = (callback) => {
-  const q = query(collection(db, "messages"));
+  const currentTimeStamp = Timestamp.now();
+  const q = query(
+    collection(db, "messages"),
+    where("createdTime", ">", currentTimeStamp) // filter for messages after entring the room
+  );
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach((doc) => {

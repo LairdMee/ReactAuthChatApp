@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { sendMessage, listenOnMessages } from "../firebase";
-import { useAuth } from "../providers/AuthProvider";
-import Navbar from "../component/Navbar"
+import Message from "../../component/Message/Message";
+import { sendMessage, listenOnMessages } from "../../firebase";
+import { useAuth } from "../../providers/AuthProvider";
+import "./ChatRoom.css";
 
 const tempMessages = [
   {
@@ -59,19 +60,27 @@ const ChatRoom = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
-      {messages.map((m) => (
-        <div key={m.messageId}>
-          {m.text} by {m.user.username}
-        </div>
-      ))}
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <button onClick={sendHandler}>send</button>
+    <div className="chat-container">
+      <section className="chat-messages">
+        {messages.map((m) => (
+          <Message
+            key={m.messageId}
+            text={m.text}
+            userId={m.user.userId}
+            username={m.user.username}
+            createdTime={m.createdTime}
+          />
+        ))}
+      </section>
+      <section className="chat-input-area">
+        <input
+          className="chat-input"
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <button onClick={sendHandler}>send</button>
+      </section>
     </div>
   );
 };

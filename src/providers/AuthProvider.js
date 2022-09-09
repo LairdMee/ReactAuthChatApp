@@ -31,8 +31,8 @@ const AuthProvider = ({ children }) => {
 
     // failed login
   };
-  const logOut= async()=>{
-    logout()
+  const logOut = async()=>{
+    await logout()
     setUser(null)
 
   }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../providers/AuthProvider";
-import Navbar from "../component/Navbar"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -53,7 +52,6 @@ const Login = () => {
   };
 
   return (
-    <div> <Navbar/> 
     <form onSubmit={submitHandler}>
       <h2>Login</h2>
       {/* email */}
@@ -84,7 +82,6 @@ const Login = () => {
         Don't have an account? Sign up <Link to="/register">here</Link>
       </div>
     </form>
-    </div>
   );
 };
 

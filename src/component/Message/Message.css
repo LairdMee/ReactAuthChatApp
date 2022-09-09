@@ -1,0 +1,43 @@
+.bubble {
+    /** styling of a general message */
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+    margin: 0.06rem;
+}
+
+
+.message {
+    max-width: 50%;
+}
+
+.self {
+    text-align: right;
+    align-self: end;
+}
+
+.other {
+    text-align: left;
+    align-self: start;
+}
+
+.text-self {
+    /** styling for our messages */
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.text-other {
+    /** styling for another user's messages */
+    background-color: rgb(214, 214, 214);
+}
+
+
+.createdTime {
+    font-size: 0.5rem;
+    color: grey;
+}
+
+.message-username {
+    font-size: 0.5rem;
+    color: grey;
+}

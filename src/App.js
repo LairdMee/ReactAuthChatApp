@@ -3,18 +3,15 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Routes, Route } from "react-router-dom";
-import { useAuth } from "./providers/AuthProvider";
-// import { useAuth } from "./providers/AuthProvider";
 import GuardedPage from "./component/GuardedPage";
 import Profile from "./pages/Profile";
-import ChatRoom from "./pages/ChatRoom";
+import ChatRoom from "./pages/ChatRoom/ChatRoom";
+import Navbar from "./component/Navbar";
 
 function App() {
-  const { user } = useAuth();
-  // const { user } = useAuth();
-
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         {/* Home (only accessed if logged in) */}
         <Route

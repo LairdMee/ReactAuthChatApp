@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../providers/AuthProvider";
-import Navbar from "../component/Navbar"
 
 const Register = () => {
   const navigate = useNavigate();
@@ -58,7 +57,6 @@ const Register = () => {
   };
 
   return (
-    <div> <Navbar /> 
     <form onSubmit={submitHandler}>
       <h2>New User Registration</h2>
       {/* email */}
@@ -96,8 +94,6 @@ const Register = () => {
       {/* submit button */}
       <button type="submit">Register</button>
     </form>
-
-    </div>
   );
 };
 
